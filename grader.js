@@ -83,8 +83,8 @@ if(require.main == module) {
         .option('-u, --url <web_url>', 'URL to index.html')
         .parse(process.argv);
     
-    if(program.web_url) {
-        rest.get(program.web_url).on('complete', function(urlcontents) {
+    if(program.url) {
+        rest.get(program.url).on('complete', function(urlcontents) {
             checkJson = checkString(urlcontents, program.checks);
         });
     }
